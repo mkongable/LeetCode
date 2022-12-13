@@ -18,7 +18,6 @@
 #include <array>
 #include <bitset>
 
-
 using namespace std;
 
 bool hasGroupsSizeX(vector<int>& deck) {
@@ -55,5 +54,7 @@ bool hasGroupsSizeX(vector<int>& deck) {
 
 int main()
 {
+    vector<int> deck = { 1, 2, 3, 4, 4, 3, 2, 1 };
+    cout << hasGroupsSizeX(deck) << endl;
     return 0;
 }
