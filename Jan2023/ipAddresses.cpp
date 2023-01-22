@@ -51,3 +51,11 @@ vector<string> restoreIpAddresses(string s) {
     helper(s, 0, dots, ans);
     return ans;
 }
+
+int main() {
+    string s = "25525511135";
+    vector<string> ans = restoreIpAddresses(s);
+    for (string s : ans) {
+        cout << s << endl;
+    }
+}
