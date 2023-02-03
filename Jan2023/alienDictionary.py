@@ -15,12 +15,12 @@ def isAlienSorted(self, words, order):
     # if the second letters are different, make sure the second letter is in the correct order
     # continue until the letter differs or the end of the word is reached
     for i in range(len(words)-1):
-        for j in range(min(len(words[i]), len(words[i+1]))):
-            if words[i][j] != words[i+1][j]:
-                if orderDict[words[i][j]] > orderDict[words[i+1][j]]:
+        for j in range(min(len(words[i]), len(words[i+1]))): # compare the shorter word
+            if words[i][j] != words[i+1][j]: # if the letters are different
+                if orderDict[words[i][j]] > orderDict[words[i+1][j]]: # if the first letter is in the wrong order
                     return False
                 break
         else:
-            if len(words[i]) > len(words[i+1]):
+            if len(words[i]) > len(words[i+1]): # if the shorter word is the same as the longer word
                 return False
     return True
