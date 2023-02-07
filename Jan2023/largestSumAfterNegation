@@ -6,27 +6,34 @@ def largestSumAfterKNegations(self, nums, k):
     """
     # sort the list
     # loop through the list
-    # make as many negative numbers positive as possible
+    # try to make as many elements as possible positive starting from the smallest negative numbers
     # if k is even after changing the negative numbers
         # return the sum of the list
     # else if k is odd
         # makes the smallest number negative
     # return the sum of the list
     nums.sort()
-    for i in range(len(nums)):
-        if nums[i] < 0 and k > 0:
-            nums[i] = -nums[i]
-            k -= 1
-        elif nums[i] == 0:
-            break
-        elif nums[i] > 0 and k % 2 == 1:
+    # get number of negative numbers
+    numNegatives = len([x for x in nums if x < 0])
+    
+    if k < numNegatives:
+        # make the smallest k numbers positive
+        for i in range(k):
+            nums[i] = -nums[i] 
+    else: # k >= numNegs
+        k -= numNegatives # make everything positive first
+        nums = [abs(x) for x in nums]
+        # if array contains 0
+        if 0 in nums or k % 2 == 0:
+            # done, the rest of the ks go into the 0 or can be evenly cancelled
+            pass
+        else:
+            # invert the smallest since I can cancel everythin
             nums.sort()
             nums[0] = -nums[0]
-            break
-        elif nums[i] > 0 and k % 2 == 0:
-            break
-        else:
-            break
+            
     return sum(nums)
-    
+
+nums = [-4,-6,9,-2,2]
+print(largestSumAfterKNegations(any, nums, 4))
         
