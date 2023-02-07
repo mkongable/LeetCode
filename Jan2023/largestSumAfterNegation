@@ -1,0 +1,32 @@
+def largestSumAfterKNegations(self, nums, k):
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: int
+    """
+    # sort the list
+    # loop through the list
+    # make as many negative numbers positive as possible
+    # if k is even after changing the negative numbers
+        # return the sum of the list
+    # else if k is odd
+        # makes the smallest number negative
+    # return the sum of the list
+    nums.sort()
+    for i in range(len(nums)):
+        if nums[i] < 0 and k > 0:
+            nums[i] = -nums[i]
+            k -= 1
+        elif nums[i] == 0:
+            break
+        elif nums[i] > 0 and k % 2 == 1:
+            nums.sort()
+            nums[0] = -nums[0]
+            break
+        elif nums[i] > 0 and k % 2 == 0:
+            break
+        else:
+            break
+    return sum(nums)
+    
+        
