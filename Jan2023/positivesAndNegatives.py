@@ -22,5 +22,3 @@ def maximumCount(self, nums):
             high = mid
         mid = (low + high) // 2
     
-    
-    
