@@ -11,9 +11,9 @@ def addToArrayForm(self, num, k):
     counter = len(num) - 1
     while k > 0:
         if counter < 0:
-            num = [k%10] + num
-            k = k // 10
-            counter = -1
+            k_list = [int(i) for i in str(k)]
+            num = k_list + num
+            break
         else:
             num[counter] += k
             k = num[counter] // 10
